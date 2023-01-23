@@ -6,7 +6,7 @@
 /*   By: mpascual <mpascual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 22:14:13 by mpascual          #+#    #+#             */
-/*   Updated: 2023/01/12 20:38:40 by mpascual         ###   ########.fr       */
+/*   Updated: 2023/01/13 00:05:48 by mpascual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,21 +17,6 @@ void	memfree(t_stack *stack)
 	free(stack->b);
 	free(stack->a);
 	free(stack);
-}
-
-int	is_sorted(t_stack *stack)
-{
-	int	i;
-
-	i = 0;
-	while (i < stack->len_a - 1)
-	{
-		if (stack->a[i] > stack->a[i + 1])
-			return (0);
-		else
-			i++;
-	}
-	return (1);
 }
 
 int	find_in(int *haystack, int needle, int len)

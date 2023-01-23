@@ -6,7 +6,7 @@
 #    By: mpascual <mpascual@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/24 18:51:54 by mpascual          #+#    #+#              #
-#    Updated: 2023/01/12 14:30:52 by mpascual         ###   ########.fr        #
+#    Updated: 2023/01/13 00:18:24 by mpascual         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ LIBFT		= libft.a
 LIBFT_HEAD	= $(LIBFT_DIR)/header.h
 HEADER		= pushswap.h
 SRC_FILES	= pushswap.c arg_filter.c instructions.c instructions2.c utils.c\
-			  small_sort.c debug.c
+			  small_sort.c
 BONUS_SRC	= 
 CC			= gcc
 CFLAGS		= -Wall -Wextra -Werror

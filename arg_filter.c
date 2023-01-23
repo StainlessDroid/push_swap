@@ -6,7 +6,7 @@
 /*   By: mpascual <mpascual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/20 21:21:42 by mpascual          #+#    #+#             */
-/*   Updated: 2023/01/12 15:42:53 by mpascual         ###   ########.fr       */
+/*   Updated: 2023/01/23 16:57:34 by mpascual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,18 @@ void	init_stacks(int len, t_stack *stack)
 		error_exit(stack);
 }
 
+int	check_intoverflow(t_stack *stack, int i, int argv_len)
+{
+	if (stack->a[i] == -1 && argv_len > 2)
+		error_exit(stack);
+	return (1);
+}
+
 void	get_stack(int argc, char **argv, t_stack *stack)
 {
-	int	i;
-	int	j;
-	int	argv_len;
+	int		i;
+	int		j;
+	int		argv_len;
 
 	i = 0;
 	init_stacks(argc - 1, stack);
@@ -44,7 +51,7 @@ void	get_stack(int argc, char **argv, t_stack *stack)
 				error_exit(stack);
 		}
 		stack->a[i] = ft_atoi(argv[i + 1]);
-		i++;
+		i += check_intoverflow(stack, i, argv_len);
 	}
 	if (find_duplicate(stack->a, stack->len_a))
 		error_exit(stack);

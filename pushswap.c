@@ -6,7 +6,7 @@
 /*   By: mpascual <mpascual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/14 16:31:04 by mpascual          #+#    #+#             */
-/*   Updated: 2023/01/12 20:39:16 by mpascual         ###   ########.fr       */
+/*   Updated: 2023/01/22 12:59:58 by mpascual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,21 @@ void	radix_sort(t_stack *stack)
 			push_a(stack);
 		i++;
 	}
+}
+
+int	is_sorted(t_stack *stack)
+{
+	int	i;
+
+	i = 0;
+	while (i < stack->len_a - 1)
+	{
+		if (stack->a[i] > stack->a[i + 1])
+			return (0);
+		else
+			i++;
+	}
+	return (1);
 }
 
 int	main(int argc, char **argv)
