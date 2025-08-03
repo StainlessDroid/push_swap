@@ -25,7 +25,7 @@ void	rotate_a(t_stack *stack)
 		i++;
 	}
 	stack->a[i] = tmp;
-	ft_putstr("ra\n");
+	ft_putstr_fd("ra\n", 1);
 }
 
 void	rotate_b(t_stack *stack)
@@ -41,7 +41,7 @@ void	rotate_b(t_stack *stack)
 		i++;
 	}
 	stack->b[i] = tmp;
-	ft_putstr("rb\n");
+	ft_putstr_fd("rb\n", 1);
 }
 
 void	reverse_rotate_a(t_stack *stack)
@@ -57,7 +57,7 @@ void	reverse_rotate_a(t_stack *stack)
 		i--;
 	}
 	stack->a[i] = tmp;
-	ft_putstr("rra\n");
+	ft_putstr_fd("rra\n", 1);
 }
 
 void	reverse_rotate_b(t_stack *stack)
@@ -73,5 +73,5 @@ void	reverse_rotate_b(t_stack *stack)
 		i--;
 	}
 	stack->b[i] = tmp;
-	ft_putstr("rrb\n");
+	ft_putstr_fd("rrb\n", 1);
 }

@@ -24,17 +24,10 @@ LIBFT_DIR	= ./libft
 LIBFT		= libft.a
 LIBFT_HEAD	= $(LIBFT_DIR)/header.h
 HEADER		= pushswap.h
-SRC_FILES	= pushswap.c arg_filter.c instructions.c instructions2.c utils.c\
+SRC			= pushswap.c arg_filter.c instructions.c instructions2.c utils.c\
 			  small_sort.c
-BONUS_SRC	= 
 CC			= gcc
 CFLAGS		= -Wall -Wextra -Werror
-
-ifdef WITH_BONUS
-SRC = $(SRC_FILES) $(BONUS_SRC)
-else
-SRC = $(SRC_FILES)
-endif
 
 OBJS		= $(SRC:%.c=%.o)
 
@@ -58,8 +51,9 @@ fclean: clean
 
 re: fclean all
 
-norme: clean
-	@norminette $(SRC)
+norme:
+	cd $(LIBFT_DIR) && $(MAKE) norme
+	@norminette $(SRC) $(HEADER)
 
 bonus:
 	$(MAKE) WITH_BONUS=1

@@ -19,7 +19,7 @@ void	swap_a(t_stack *stack)
 	tmp = stack->a[0];
 	stack->a[0] = stack->a[1];
 	stack->a[1] = tmp;
-	ft_putstr("sa\n");
+	ft_putstr_fd("sa\n", 1);
 }
 
 void	swap_b(t_stack *stack)
@@ -29,7 +29,7 @@ void	swap_b(t_stack *stack)
 	tmp = stack->a[0];
 	stack->b[0] = stack->b[1];
 	stack->b[1] = tmp;
-	ft_putstr("sb\n");
+	ft_putstr_fd("sb\n", 1);
 }
 
 int	push_a(t_stack *stack)
@@ -52,7 +52,7 @@ int	push_a(t_stack *stack)
 	}
 	stack->len_b--;
 	stack->len_a++;
-	ft_putstr("pa\n");
+	ft_putstr_fd("pa\n", 1);
 	return (1);
 }
 
@@ -76,6 +76,6 @@ int	push_b(t_stack *stack)
 	}
 	stack->len_a--;
 	stack->len_b++;
-	ft_putstr("pb\n");
+	ft_putstr_fd("pb\n", 1);
 	return (1);
 }
